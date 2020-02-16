@@ -1,11 +1,10 @@
 import React from "react";
-import { Route } from "react-router-dom";
 import styled from "styled-components";
+import { Typography } from "@material-ui/core";
 
-import Home from "./Home";
-import City from "./City";
+import AppName from "./components/AppName";
+import Cities from "./components/Cities";
 
-// import "./App.css";
 const FlexRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -19,13 +18,16 @@ const FlexRow = styled.div`
   }
 `;
 
-function App() {
+function Home() {
   return (
     <>
-      <Route path="/" component={Home} exact />
-      <Route path="/cities/:cityname" component={City} />
+      <AppName />
+      <Typography variant="subtitle1" align="center">
+        지역을 선택해주세요.
+      </Typography>
+      <Cities />
     </>
   );
 }
 
-export default App;
+export default Home;
